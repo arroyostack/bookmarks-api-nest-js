@@ -3,3 +3,24 @@
 ```
 nest g module <module-name>
 ```
+
+2. Compose Docker Image
+
+```
+docker compose up dev-db -d
+
+check
+
+docker ps
+
+-then chech Container id
+docker logs <container-id>
+docker logs d7e3c7b9cb26
+
+```
+
+3. Prisma!
+
+```
+
+```
