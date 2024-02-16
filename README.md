@@ -4,6 +4,8 @@
 
 This repository houses a bookmarks API built using Nest.js, designed as a learning resource to guide you through core Nest.js concepts. Following a step-by-step tutorial, we dive into routing, controllers, services, dependency injection, and more, culminating in a functional bookmarks API from scratch.
 
+Please note that while the tutorial does not strictly adhere to the repository pattern, particularly in terms of database interactions being included in the service layer (where only bussiness logic should be in included), I have chosen to implement this pattern based on my understanding of the repository pattern in Nest.js.
+
 ## Technologies
 
 - **Nest.js:** A powerful Node.js framework for building scalable and efficient server-side applications.
