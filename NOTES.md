@@ -43,5 +43,5 @@ npx prisma generate
 6. Access prisma client.
 
 ```
-npx prisma generate
+npx prisma studio
 ```
