@@ -13,7 +13,7 @@ check
 
 docker ps
 
--then chech Container id
+-then check Container id
 docker logs <container-id>
 docker logs d7e3c7b9cb26
 
@@ -32,4 +32,16 @@ npx prisma init
 
 ```
 npx prisma init
+```
+
+5. Generate types from prisma to use throughout the project
+
+```
+npx prisma generate
+```
+
+6. Access prisma client.
+
+```
+npx prisma generate
 ```
