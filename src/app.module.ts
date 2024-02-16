@@ -8,3 +8,6 @@ import { PrismaModule } from './prisma/prisma.module';
   imports: [AuthModule, UserModule, BookmarkModule, PrismaModule],
 } )
 export class AppModule { }
+
+
+// 48:00 

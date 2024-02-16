@@ -9,24 +9,38 @@ datasource db {
 }
 
 model User {
+  @@map("users")
+
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  email String
+  email String @unique
   hash String
 
   firstName String?
   lastName String?
+
+  Bookmarks Bookmark[]
+  
 }
 
 model Bookmark {
+  @@map("bookmarks")
+
+  // Default fields
   id Int @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
+  // Custom fields
   title String
   description String?
   link String
+
+// Relations
+  userId Int
+  user User @relation(fields: [userId], references: [id])
+
 }
 
