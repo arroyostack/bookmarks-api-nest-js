@@ -22,5 +22,14 @@ docker logs d7e3c7b9cb26
 3. Prisma!
 
 ```
+yarn add -D prisma
+yarn add @prisma/client
+npx prisma init
 
+```
+
+4. Make prisma models and
+
+```
+npx prisma init
 ```
