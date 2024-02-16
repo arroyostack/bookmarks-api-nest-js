@@ -11,8 +11,8 @@ export class AuthService {
         return this.authRepository.singUp( dto );
     };
 
-    async logIn() {
-        return this.authRepository.logIn();
+    async logIn( dto: AuthDto ) {
+        return this.authRepository.logIn( dto );
     };
 
 }

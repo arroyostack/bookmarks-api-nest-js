@@ -20,6 +20,10 @@ export class AuthRepository {
                 data: {
                     email: dto.email,
                     hash: hash,
+                },
+                select: {
+                    email: true,
+                    id: true,
                 }
             } );
 
@@ -37,14 +41,27 @@ export class AuthRepository {
         }
     };
 
-    async logIn() {
+    async logIn( dto: AuthDto ) {
         // find the user by email
+        const user = await this.prisma.user.findUnique( {
+            where: {
+                email: dto.email
+            }
+        } );
         // if user dont exist throw error
-        // compare password
-        // if password is wrong throw error
+        if ( !user )
+            throw new ForbiddenException( 'User not found' );
+        // Compare password with argon compare function.
+        const pwMatches = await argon.verify( user.hash, dto.password );
+        // If password is wrong throw error.
+        if ( !pwMatches )
+            throw new ForbiddenException( 'Password is wrong' );
         // id everything is ok return user
 
-        return 'I am Login';
+
+        delete user.hash;
+
+        return user;
     };
 
 }
